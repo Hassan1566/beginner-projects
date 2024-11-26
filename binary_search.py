@@ -71,9 +71,7 @@ if __name__=='__main__':
     # print(naive_search(l, target))
     # print(binary_search(l, target))
 
-   
-    end = time.time()
-    print("Binary search time: ", (end - start), "seconds") length = 10000
+    length = 10000
     # build a sorted list of length 10000
     sorted_list = set()
     while len(sorted_list) < length:
@@ -88,4 +86,6 @@ if __name__=='__main__':
 
     start = time.time()
     for target in sorted_list:
-        binary_search(sorted_list, target
+        binary_search(sorted_list, target)
+    end = time.time()
+    print("Binary search time: ", (end - start), "seconds")
