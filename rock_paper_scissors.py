@@ -21,9 +21,15 @@ def play():
 
     # r > s, s > p, p > r
     if is_win(user, computer):
-        return 'You won!'
+        return 'You won!', play_again()
+    return 'You lost!', play_again()
 
-    return 'You lost!'
+def play_again():
+    choose = input("Do you want to play again? (y/n)\n")
+    if choose == 'y':
+        return play()
+    else:
+        return 'Thanks for playing!'
 
 def is_win(player, opponent):
     # return true if player wins
