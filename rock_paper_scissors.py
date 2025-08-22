@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Implementation of rock, paper, scissors by Kylie Ying
 
