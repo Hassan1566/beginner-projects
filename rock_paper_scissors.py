@@ -1,3 +1,4 @@
+#!usr/bin/env/ python3
 """
 Implementation of rock, paper, scissors by Kylie Ying
 
@@ -17,13 +18,24 @@ def play():
     computer = random.choice(['r', 'p', 's'])
 
     if user == computer:
-        return 'It\'s a tie'
+        print("It's a tie")
 
     # r > s, s > p, p > r
     if is_win(user, computer):
-        return 'You won!'
-
-    return 'You lost!'
+        print("You won!")
+        return play_again()
+    print("You won!")
+    return play_again()
+    
+    def play_again():
+    choose = input("Do you want to play again? (y/n)\n").lower()
+    if choose == 'y':
+        return play()
+    elif choose == 'n':
+        return 'Thanks for playing!'
+    else:
+        print("Please enter 'y' or 'n'.")
+        return play_again()
 
 def is_win(player, opponent):
     # return true if player wins
